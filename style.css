@@ -14,3 +14,82 @@ Text Domain: twentytwentyfive-child
 */
 
 /* Add your custom styles below. */
+
+/* -------------------------------------------------------------------------
+   Front page — profile card ("front-page.html")
+   ------------------------------------------------------------------------- */
+
+/* Full-viewport stage that vertically + horizontally centers the card. */
+.dd-profile-screen {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 48px 24px;
+}
+
+/* The white card.
+   Width is responsive: narrow (20%) on large desktops, widening toward
+   full-width as the viewport shrinks. Breakpoints mirror the WordPress
+   core block library (480 / 600 / 782 / 960 / 1280px), since the parent
+   theme ships no media queries of its own. Mobile-first cascade below. */
+.dd-profile-card {
+	box-sizing: border-box;
+	width: 100%;        /* phones: fill the available width */
+	min-width: 260px;   /* readability floor on narrow desktop columns */
+	max-width: 520px;   /* ceiling so it never sprawls on ultra-wide screens */
+	padding: 48px 44px;
+	border-radius: 28px;
+	box-shadow: 0 24px 60px rgba(43, 43, 38, 0.10);
+}
+
+/* >= 480px (small phone) */
+@media (min-width: 480px) {
+	.dd-profile-card { width: 90%; }
+}
+
+/* >= 600px (core mobile/stack breakpoint) */
+@media (min-width: 600px) {
+	.dd-profile-card { width: 70%; }
+}
+
+/* >= 782px (core tablet breakpoint) */
+@media (min-width: 782px) {
+	.dd-profile-card { width: 50%; }
+}
+
+/* >= 960px (small desktop) */
+@media (min-width: 960px) {
+	.dd-profile-card { width: 50%; }
+}
+
+/* Circular photo with a sage ring (accent-1). */
+.dd-profile-card .dd-photo img {
+	border-radius: 50%;
+	box-shadow: 0 0 0 3px var(--wp--preset--color--accent-1, #7C9470);
+}
+
+/* Inline links inside the card use the gold accent (accent-4). */
+.dd-profile-card a {
+	color: var(--wp--preset--color--accent-4, #C9A24B);
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.dd-profile-card a:hover,
+.dd-profile-card a:focus {
+	color: var(--wp--preset--color--accent-2, #4B5A3F);
+}
+
+/* Social row — white circular chips with sage icons. */
+.dd-socials.wp-block-social-links .wp-block-social-link {
+	background-color: #ffffff;
+	border-radius: 50%;
+	box-shadow: 0 6px 16px rgba(43, 43, 38, 0.08);
+}
+
+.dd-socials.wp-block-social-links .wp-block-social-link:hover {
+	transform: translateY(-2px);
+}

@@ -47,5 +47,9 @@
 			]
 		}
 	},
-	"styles": {}
+	"styles": {
+		"typography": {
+			"lineHeight": "1.6"
+		}
+	}
 }

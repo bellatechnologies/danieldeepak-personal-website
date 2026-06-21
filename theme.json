@@ -2,6 +2,40 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
 	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"name": "Inter",
+					"slug": "inter",
+					"fontFamily": "Inter, ui-sans-serif, sans-serif",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/inter/Inter-VariableFont_wght.woff2"
+							],
+							"fontWeight": "100 900",
+							"fontStyle": "normal",
+							"fontFamily": "Inter"
+						}
+					]
+				},
+				{
+					"name": "Plus Jakarta Sans",
+					"slug": "plus-jakarta-sans",
+					"fontFamily": "\"Plus Jakarta Sans\", ui-sans-serif, sans-serif",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.woff2"
+							],
+							"fontWeight": "200 800",
+							"fontStyle": "normal",
+							"fontFamily": "Plus Jakarta Sans"
+						}
+					]
+				}
+			]
+		},
 		"color": {
 			"palette": [
 				{
@@ -48,8 +82,33 @@
 		}
 	},
 	"styles": {
+		"color": {
+			"text": "#6a7282"
+		},
 		"typography": {
+			"fontFamily": "var:preset|font-family|inter",
 			"lineHeight": "1.6"
+		},
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "var:preset|color|contrast"
+				},
+				"typography": {
+					"fontFamily": "var:preset|font-family|plus-jakarta-sans",
+					"fontWeight": "700"
+				}
+			}
+		},
+		"blocks": {
+			"core/site-title": {
+				"color": {
+					"text": "var:preset|color|contrast"
+				},
+				"typography": {
+					"fontFamily": "var:preset|font-family|plus-jakarta-sans"
+				}
+			}
 		}
 	}
 }

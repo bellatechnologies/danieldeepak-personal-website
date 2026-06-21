@@ -92,3 +92,28 @@ Text Domain: twentytwentyfive-child
 .dd-socials.wp-block-social-links .wp-block-social-link:hover {
 	transform: translateY(-2px);
 }
+
+/* WhatsApp CTA — solid pill button with inline WhatsApp icon. */
+.dd-cta {
+	margin-top: var(--wp--preset--spacing--30, 1.5rem);
+}
+
+.dd-cta .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	border-radius: 999px;
+	font-weight: 600;
+	box-shadow: 0 8px 20px rgba(75, 90, 63, 0.25);
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dd-cta .wp-block-button__link:hover,
+.dd-cta .wp-block-button__link:focus {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px rgba(75, 90, 63, 0.32);
+}
+
+.dd-cta .dd-cta-icon {
+	flex: 0 0 auto;
+}

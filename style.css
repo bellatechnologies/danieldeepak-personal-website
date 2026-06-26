@@ -75,6 +75,7 @@ Text Domain: twentytwentyfive-child
 	margin: -48px -44px 0 !important;
 	width: auto !important;
 	max-width: none !important;
+	height: 125px;
 	padding: 26px 28px 30px 44px; /* left padding == card padding, so banner text lines up with avatar + name */
 	border-radius: 28px 28px 0 0;
 	background: var(--wp--preset--color--accent-1, #7C9470);
@@ -100,9 +101,24 @@ Text Domain: twentytwentyfive-child
 	color: #ffffff;
 }
 
+/* Name + verified badge on one row, badge vertically centred to the text. */
+.dd-profile-card h1.wp-block-heading {
+	display: flex;
+	align-items: center;
+	gap: 0.25em;
+}
+
+/* X "verified" badge sitting next to the name. */
+.dd-verified-icon {
+	flex: 0 0 auto;
+	width: 0.85em;
+	height: 0.85em;
+	color: #1d9bf0; /* X verified blue */
+}
+
 /* Circular photo — left-aligned, pulled up to overlap the banner, white ring. */
 .dd-profile-card .dd-photo {
-	margin-top: -55px !important; /* overlaps the banner so the avatar reads centered on the seam */
+	margin-top: -68px !important; /* overlaps the banner so the 125px avatar reads centered on the seam */
 	margin-left: 0 !important;
 	margin-right: auto !important;
 }

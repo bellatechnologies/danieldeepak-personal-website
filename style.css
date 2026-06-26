@@ -5,7 +5,7 @@ Description: Child theme of Twenty Twenty-Five for danieldeepak.com customizatio
 Author: Daniel Deepak
 Author URI: https://danieldeepak.com/
 Template: twentytwentyfive
-Version: 1.0.0
+Version: 0.1.0
 Requires at least: 6.7
 Requires PHP: 7.2
 License: GNU General Public License v2 or later
@@ -64,10 +64,77 @@ Text Domain: twentytwentyfive-child
 	.dd-profile-card { width: 50%; }
 }
 
-/* Circular photo with a sage ring (accent-1). */
+/* -------------------------------------------------------------------------
+   Top banner — solid sage strip (~top 20%) with overlapping left avatar.
+   Only this region changes; the rest of the card is untouched.
+   ------------------------------------------------------------------------- */
+
+/* Solid green strip that breaks out of the card's padding to sit flush with
+   the top + side edges (negative margins == the card's 48/44 padding). */
+.dd-profile-card .dd-banner {
+	margin: -48px -44px 0 !important;
+	width: auto !important;
+	max-width: none !important;
+	height: 125px;
+	padding: 26px 28px 30px 44px; /* left padding == card padding, so banner text lines up with avatar + name */
+	border-radius: 28px 28px 0 0;
+	background: var(--wp--preset--color--accent-1, #7C9470);
+	text-align: left;
+}
+
+/* Eyebrow — who I serve. */
+.dd-banner .dd-banner-eyebrow {
+	margin: 0 0 0.5rem;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+/* Headline — what I do. */
+.dd-banner .dd-banner-headline {
+	margin: 0;
+	font-size: 1.05rem;
+	font-weight: 700;
+	line-height: 1.3;
+	color: #ffffff;
+}
+
+/* Name + verified badge on one row, badge vertically centred to the text. */
+.dd-profile-card h1.wp-block-heading {
+	display: flex;
+	align-items: center;
+	gap: 0.25em;
+}
+
+/* X "verified" badge sitting next to the name. */
+.dd-verified-icon {
+	flex: 0 0 auto;
+	width: 0.85em;
+	height: 0.85em;
+	color: #1d9bf0; /* X verified blue */
+}
+
+/* Circular photo — left-aligned, pulled up to overlap the banner, white ring. */
+.dd-profile-card .dd-photo {
+	margin-top: -68px !important; /* overlaps the banner so the 125px avatar reads centered on the seam */
+	margin-left: 0 !important;
+	margin-right: auto !important;
+}
+
 .dd-profile-card .dd-photo img {
 	border-radius: 50%;
-	box-shadow: 0 0 0 3px var(--wp--preset--color--accent-1, #7C9470);
+	box-shadow: 0 0 0 4px #ffffff, 0 6px 16px rgba(43, 43, 38, 0.18);
+}
+
+/* Role / handle line directly under the name. */
+.dd-profile-card .dd-handle {
+	margin-top: 0;
+	margin-bottom: 1rem;
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: rgba(43, 43, 38, 0.55);
 }
 
 /* Inline links inside the card use the gold accent (accent-4). */

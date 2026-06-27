@@ -199,11 +199,6 @@ Text Domain: twentytwentyfive-child
 	flex: 0 0 auto;
 }
 
-/* Match the space below the CTA button to the space above it (doubled). */
-.dd-profile-card p.dd-cta-links {
-	margin-top: calc(2 * var(--wp--preset--spacing--30, 1.5rem));
-}
-
 /* Emphasised phrase — thick accent underline instead of a filled highlight. */
 .dd-profile-card .dd-highlight {
 	text-decoration: underline dashed;

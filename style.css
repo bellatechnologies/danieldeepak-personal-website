@@ -79,26 +79,40 @@ Text Domain: twentytwentyfive-child
 	padding: 26px 28px 30px 44px; /* left padding == card padding, so banner text lines up with avatar + name */
 	border-radius: 28px 28px 0 0;
 	background: var(--wp--preset--color--accent-1, #7C9470);
-	text-align: left;
+	text-align: center;
 }
 
-/* Eyebrow — who I serve. */
+/* <= 960px (small desktop and below): right-align banner text. */
+@media (max-width: 960px) {
+	.dd-profile-card .dd-banner {
+		text-align: right;
+	}
+}
+
+/* Eyebrow — savings lead-in. */
 .dd-banner .dd-banner-eyebrow {
-	margin: 0 0 0.5rem;
-	font-size: 0.72rem;
-	font-weight: 600;
-	letter-spacing: 0.13em;
-	text-transform: uppercase;
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 500;
+	letter-spacing: 0.02em;
 	color: rgba(255, 255, 255, 0.82);
 }
 
-/* Headline — what I do. */
-.dd-banner .dd-banner-headline {
-	margin: 0;
-	font-size: 1.05rem;
-	font-weight: 700;
-	line-height: 1.3;
+/* Amount — the headline savings figure. */
+.dd-banner .dd-banner-amount {
+	margin: 0.1rem 0;
+	font-size: 2.4rem;
+	font-weight: 800;
+	line-height: 1;
 	color: #ffffff;
+}
+
+/* Sub — cadence beneath the amount. */
+.dd-banner .dd-banner-sub {
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.82);
 }
 
 /* Name + verified badge on one row, badge vertically centred to the text. */

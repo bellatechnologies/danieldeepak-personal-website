@@ -123,8 +123,9 @@ Text Domain: twentytwentyfive-child
 	color: var(--wp--preset--color--contrast, #2B2B26);
 }
 
-/* ICP H1 — the semantic page headline, visually indistinguishable from body copy. */
+/* ICP H1 — semantic page headline, visually indistinguishable from body copy. */
 .dd-profile-card h1.wp-block-heading.dd-icp-heading {
+	font-family: Inter, ui-sans-serif, sans-serif;
 	font-size: inherit;
 	font-weight: inherit;
 	letter-spacing: normal;

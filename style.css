@@ -128,7 +128,7 @@ Text Domain: twentytwentyfive-child
 	font-family: Inter, ui-sans-serif, sans-serif;
 	font-size: inherit;
 	font-weight: inherit;
-	letter-spacing: normal;
+	letter-spacing: -0.1px;
 	text-transform: none;
 	line-height: inherit;
 	margin-top: calc(2 * var(--wp--preset--spacing--20, 0.5rem));

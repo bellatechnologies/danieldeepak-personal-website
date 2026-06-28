@@ -79,26 +79,33 @@ Text Domain: twentytwentyfive-child
 	padding: 26px 28px 30px 44px; /* left padding == card padding, so banner text lines up with avatar + name */
 	border-radius: 28px 28px 0 0;
 	background: var(--wp--preset--color--accent-1, #7C9470);
-	text-align: left;
+	text-align: right;
 }
 
-/* Eyebrow — who I serve. */
+/* Eyebrow — savings lead-in. */
 .dd-banner .dd-banner-eyebrow {
-	margin: 0 0 0.5rem;
-	font-size: 0.72rem;
-	font-weight: 600;
-	letter-spacing: 0.13em;
-	text-transform: uppercase;
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 500;
+	letter-spacing: 0.02em;
 	color: rgba(255, 255, 255, 0.82);
 }
 
-/* Headline — what I do. */
-.dd-banner .dd-banner-headline {
-	margin: 0;
-	font-size: 1.05rem;
-	font-weight: 700;
-	line-height: 1.3;
+/* Amount — the headline savings figure. */
+.dd-banner .dd-banner-amount {
+	margin: 0.1rem 0;
+	font-size: 2.4rem;
+	font-weight: 800;
+	line-height: 1;
 	color: #ffffff;
+}
+
+/* Sub — cadence beneath the amount. */
+.dd-banner .dd-banner-sub {
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.82);
 }
 
 /* Name + verified badge on one row, badge vertically centred to the text. */
@@ -126,6 +133,13 @@ Text Domain: twentytwentyfive-child
 .dd-profile-card .dd-photo img {
 	border-radius: 50%;
 	box-shadow: 0 0 0 4px #ffffff, 0 6px 16px rgba(43, 43, 38, 0.18);
+}
+
+/* Double the top spacing on the card's flowing paragraphs (default gap is
+   blockGap spacing|20). The flush .dd-handle and the banner keep their own
+   margins via higher specificity. */
+.dd-profile-card > p {
+	margin-top: calc(2 * var(--wp--preset--spacing--20, 0.5rem));
 }
 
 /* Role / handle line directly under the name. */
@@ -183,11 +197,6 @@ Text Domain: twentytwentyfive-child
 
 .dd-cta .dd-cta-icon {
 	flex: 0 0 auto;
-}
-
-/* Match the space below the CTA button to the space above it. */
-.dd-cta-links {
-	margin-top: var(--wp--preset--spacing--30, 1.5rem);
 }
 
 /* Emphasised phrase — thick accent underline instead of a filled highlight. */

@@ -108,11 +108,31 @@ Text Domain: twentytwentyfive-child
 	color: rgba(255, 255, 255, 0.82);
 }
 
-/* Name + verified badge on one row, badge vertically centred to the text. */
-.dd-profile-card h1.wp-block-heading {
+/* Name line — same visual as the former H1, now a <p> for semantic correctness. */
+.dd-profile-card .dd-name {
 	display: flex;
 	align-items: center;
 	gap: 0.25em;
+	margin-top: var(--wp--preset--spacing--30);
+	margin-bottom: 0.35rem;
+	font-size: 1.75rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	line-height: 1.2;
+	color: var(--wp--preset--color--contrast, #2B2B26);
+}
+
+/* ICP H1 — the semantic page headline, visually indistinguishable from body copy. */
+.dd-profile-card h1.wp-block-heading.dd-icp-heading {
+	font-size: inherit;
+	font-weight: inherit;
+	letter-spacing: normal;
+	text-transform: none;
+	line-height: inherit;
+	margin-top: calc(2 * var(--wp--preset--spacing--20, 0.5rem));
+	margin-bottom: 0;
+	color: inherit;
 }
 
 /* X "verified" badge sitting next to the name. */

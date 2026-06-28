@@ -42,6 +42,7 @@ function dd_front_page_jsonld() {
 				'name'        => 'Maria Daniel Deepak',
 				'url'         => 'https://danieldeepak.com',
 				'email'       => 'daniel@danieldeepak.com',
+				'description' => 'Helping spa and wellness owners turn more enquiries into bookings and keep clients coming back more often.',
 				'jobTitle'    => 'CRM & Automation Consultant — Spa and Wellness',
 				'worksFor'    => [ '@id' => 'https://danieldeepak.com/#organization' ],
 				'sameAs'      => [
@@ -70,7 +71,7 @@ function dd_front_page_jsonld() {
 					'post-visit follow-up automation',
 					'increasing repeat bookings for spas',
 				],
-				'serviceType' => 'End-to-end client journey automation for spa and wellness businesses — from enquiry and conversation through decision, purchase, follow-up, and repeat booking.',
+				'serviceType' => 'Helping spa and wellness owners turn more enquiries into bookings and keep clients coming back — CRM setup and automation across the full client journey.',
 			],
 		],
 	];

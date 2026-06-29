@@ -227,3 +227,165 @@ Text Domain: twentytwentyfive-child
 	text-decoration-thickness: 1px;
 	text-underline-offset: 5px;
 }
+
+/* -------------------------------------------------------------------------
+   About page — two-column portrait layout ("templates/page-about.html")
+   ------------------------------------------------------------------------- */
+
+.dd-about-columns.wp-block-columns {
+	gap: 0 !important;
+	margin-bottom: 0;
+	min-height: 80vh;
+	/* Paint the sidebar colour as a column-stop gradient so it always
+	   fills the full height regardless of which column is taller. */
+	background: linear-gradient(
+		to right,
+		var(--wp--preset--color--accent-1) 30%,
+		var(--wp--preset--color--base)      30%
+	);
+}
+
+/* ── Sidebar (accent-1) ── */
+.dd-about-sidebar.wp-block-column {
+	background: transparent;
+	padding: 52px 28px 48px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.dd-about-photo {
+	margin-bottom: 0 !important;
+}
+
+.dd-about-photo img {
+	border-radius: 50%;
+	box-shadow: 0 0 0 3px #fff, 0 4px 16px rgba(43, 43, 38, 0.2);
+}
+
+.dd-about-name {
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	color: #fff !important;
+	text-align: center;
+	line-height: 1.25;
+	margin-top: 1rem;
+	margin-bottom: 0.2rem;
+}
+
+.dd-about-role {
+	font-size: 0.7rem;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.7) !important;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+}
+
+.dd-about-stats.wp-block-group {
+	width: 100%;
+}
+
+.dd-about-stat.wp-block-group {
+	padding: 10px 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dd-about-stat.wp-block-group:last-child {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dd-about-stat-num {
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 1.4rem;
+	font-weight: 800;
+	color: #fff !important;
+	line-height: 1;
+	margin: 0;
+}
+
+.dd-about-stat-label {
+	font-size: 0.65rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.6) !important;
+	margin-top: 0.15rem;
+	margin-bottom: 0;
+}
+
+.dd-about-tags {
+	margin-top: 1.25rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	justify-content: center;
+}
+
+.dd-about-tag {
+	display: inline-block;
+	font-size: 0.7rem;
+	font-weight: 500;
+	padding: 3px 10px;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.2);
+	color: #fff;
+}
+
+/* ── Content area (base) ── */
+.dd-about-content.wp-block-column {
+	background-color: var(--wp--preset--color--base);
+	padding: 52px 52px 48px;
+}
+
+.dd-about-heading.wp-block-heading {
+	font-size: 1.6rem;
+	font-weight: 800;
+	line-height: 1.2;
+	color: var(--wp--preset--color--contrast);
+	margin-bottom: 0.5rem;
+}
+
+.dd-about-lede {
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--wp--preset--color--contrast);
+	line-height: 1.55;
+	margin-bottom: 1rem;
+}
+
+.dd-about-pull {
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--wp--preset--color--accent-2) !important;
+	line-height: 1.45;
+	margin: 1.25rem 0;
+	padding: 14px 20px;
+	border-left: 3px solid var(--wp--preset--color--accent-1);
+	background-color: #F0F5EE;
+	border-radius: 0 8px 8px 0;
+}
+
+.dd-about-focus-label {
+	font-size: 0.65rem;
+	font-weight: 600;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--accent-1) !important;
+	margin-top: 1.5rem;
+	margin-bottom: 0.3rem;
+}
+
+/* ── Mobile: stack columns ── */
+@media (max-width: 781px) {
+	.dd-about-sidebar.wp-block-column {
+		padding: 40px 24px;
+	}
+
+	.dd-about-content.wp-block-column {
+		padding: 40px 24px;
+	}
+}

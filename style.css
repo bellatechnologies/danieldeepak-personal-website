@@ -232,10 +232,22 @@ Text Domain: twentytwentyfive-child
    About page — two-column portrait layout ("templates/page-about.html")
    ------------------------------------------------------------------------- */
 
+.dd-about-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 48px 24px;
+}
+
 .dd-about-columns.wp-block-columns {
 	gap: 0 !important;
 	margin-bottom: 0;
-	min-height: 80vh;
+	width: 100%;
+	max-width: 1200px;
+	border-radius: 24px;
+	overflow: hidden;
+	box-shadow: 0 24px 60px rgba(43, 43, 38, 0.10);
 	/* Paint the sidebar colour as a column-stop gradient so it always
 	   fills the full height regardless of which column is taller. */
 	background: linear-gradient(

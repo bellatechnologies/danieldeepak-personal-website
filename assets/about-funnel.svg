@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 620" role="img" aria-labelledby="ddTitle ddDesc" font-family="Inter, ui-sans-serif, sans-serif">
+  <title id="ddTitle">The leaky revenue funnel</title>
+  <desc id="ddDesc">Around 100 enquiries a month pour into a funnel but leak out at three gaps — no reply, no deposit or reminder, and no follow-up — and each enquiry you miss costs you $1,000+ over 6 months.</desc>
+
+  <style>
+    @keyframes ddMove { to { offset-distance: 100%; } }
+    @keyframes ddLoss {
+      0%   { opacity: 0; color: #7C9470; }
+      7%   { opacity: 1; color: #7C9470; }
+      35%  { color: #BC6B5A; }
+      70%  { opacity: 1; color: #BC6B5A; }
+      100% { opacity: 0; color: #BC6B5A; }
+    }
+    @keyframes ddKeep {
+      0%   { opacity: 0; color: #7C9470; }
+      7%   { opacity: 1; color: #7C9470; }
+      72%  { color: #C9A24B; }
+      90%  { opacity: 1; color: #C9A24B; }
+      100% { opacity: 0; color: #C9A24B; }
+    }
+
+    .jk  { font-family: 'Plus Jakarta Sans', ui-sans-serif, sans-serif; }
+    .tok { offset-rotate: 0deg; }
+    .thruA { offset-path: path("M360,70 L380,140 L380,505"); animation: ddMove 5s linear infinite, ddKeep 5s linear infinite; }
+    .thruB { offset-path: path("M380,70 L380,505");          animation: ddMove 5s linear infinite, ddKeep 5s linear infinite; }
+    .thruC { offset-path: path("M400,70 L380,140 L380,505"); animation: ddMove 5s linear infinite, ddKeep 5s linear infinite; }
+    .leak1 { offset-path: path("M380,70 L380,205 L224,232 L120,380"); animation: ddMove 4s linear infinite, ddLoss 4s linear infinite; }
+    .leak2 { offset-path: path("M380,70 L380,295 L513,320 L645,452"); animation: ddMove 4s linear infinite, ddLoss 4s linear infinite; }
+    .leak3 { offset-path: path("M380,70 L380,385 L311,405 L232,522"); animation: ddMove 4s linear infinite, ddLoss 4s linear infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tok { animation: none !important; offset-distance: 40%; opacity: 0.9 !important; color: #BC6B5A !important; }
+      .thruA, .thruB, .thruC { color: #C9A24B !important; }
+    }
+  </style>
+
+  <!-- Funnel body -->
+  <polygon points="180,120 580,120 410,470 350,470" fill="#7C9470" opacity="0.10"/>
+
+  <!-- Stage dividers -->
+  <line x1="224" y1="210" x2="536" y2="210" stroke="#A8BC9D" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.4"/>
+  <line x1="267" y1="300" x2="513" y2="300" stroke="#A8BC9D" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.4"/>
+  <line x1="311" y1="390" x2="449" y2="390" stroke="#A8BC9D" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.4"/>
+
+  <!-- Funnel walls (broken at each leak gap) -->
+  <path d="M180,120 L218,198" fill="none" stroke="#A8BC9D" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M230,222 L305,378" fill="none" stroke="#A8BC9D" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M317,402 L350,470" fill="none" stroke="#A8BC9D" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M580,120 L498,288" fill="none" stroke="#A8BC9D" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M487,312 L410,470" fill="none" stroke="#A8BC9D" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Spout -->
+  <path d="M350,470 L362,494" fill="none" stroke="#A8BC9D" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M410,470 L398,494" fill="none" stroke="#A8BC9D" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Leak connectors -->
+  <line x1="217" y1="210" x2="204" y2="210" stroke="#BC6B5A" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
+  <line x1="499" y1="300" x2="520" y2="300" stroke="#BC6B5A" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
+  <line x1="305" y1="390" x2="222" y2="390" stroke="#BC6B5A" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
+
+  <!-- Top caption (outside · Inter) -->
+  <text x="380" y="42" text-anchor="middle" font-size="11" letter-spacing="1.5" font-weight="600" fill="#7C9470">&#8776; 100 ENQUIRIES / MONTH</text>
+
+  <!-- Stage labels (inside · Plus Jakarta Sans) -->
+  <text class="jk" x="380" y="170" text-anchor="middle" font-size="16" font-weight="700" letter-spacing="1" fill="#4B5A3F">ENQUIRIES</text>
+  <text class="jk" x="380" y="260" text-anchor="middle" font-size="16" font-weight="700" letter-spacing="1" fill="#4B5A3F">BOOKINGS</text>
+  <text class="jk" x="380" y="350" text-anchor="middle" font-size="16" font-weight="700" letter-spacing="1" fill="#4B5A3F">VISITS</text>
+
+  <!-- Gap leak labels + enquiry counts (outside · Inter) -->
+  <text x="198" y="198" text-anchor="end" font-size="12.5" fill="#9c8e84"><tspan font-weight="800" fill="#BC6B5A">LEAK</tspan> &#183; No reply</text>
+  <text x="198" y="215" text-anchor="end" font-size="12" font-weight="700" fill="#BC6B5A">38 enquiries / mo</text>
+
+  <text x="525" y="288" text-anchor="start" font-size="12.5" fill="#9c8e84"><tspan font-weight="800" fill="#BC6B5A">LEAK</tspan> &#183; No deposit &#183; reminder</text>
+  <text x="525" y="305" text-anchor="start" font-size="12" font-weight="700" fill="#BC6B5A">34 no-shows / mo</text>
+
+  <text x="215" y="380" text-anchor="end" font-size="12.5" fill="#9c8e84"><tspan font-weight="800" fill="#BC6B5A">LEAK</tspan> &#183; No follow-up</text>
+  <text x="215" y="397" text-anchor="end" font-size="12" font-weight="700" fill="#BC6B5A">20 / mo never return</text>
+
+  <!-- Outcome (the trickle that survives) -->
+  <text x="380" y="520" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="0.8" fill="#C9A24B">REPEAT CLIENTS &#183; a trickle</text>
+
+  <!-- Home-page value block (outside · Inter) -->
+  <line x1="305" y1="534" x2="455" y2="534" stroke="#A8BC9D" stroke-width="1.5" opacity="0.45"/>
+  <text x="380" y="556" text-anchor="middle" font-size="12" letter-spacing="0.3" fill="#7C9470">each enquiry you miss costs you</text>
+  <text x="380" y="591" text-anchor="middle" font-size="32" font-weight="800" letter-spacing="0.5" fill="#4B5A3F">$1,000+</text>
+  <text x="380" y="610" text-anchor="middle" font-size="11" fill="#9c8e84">over 6 months</text>
+
+  <!-- Revenue tokens (currency · Inter) -->
+  <g class="tok thruA"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$175</text></g>
+  <g class="tok thruB" style="animation-delay:-2.5s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$169</text></g>
+  <g class="tok thruC" style="animation-delay:-4s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$269</text></g>
+
+  <g class="tok leak1" style="animation-delay:-0.4s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$175</text></g>
+  <g class="tok leak1" style="animation-delay:-1.8s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$122</text></g>
+  <g class="tok leak1" style="animation-delay:-3.1s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$169</text></g>
+
+  <g class="tok leak2" style="animation-delay:-0.9s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$239</text></g>
+  <g class="tok leak2" style="animation-delay:-2.3s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$325</text></g>
+  <g class="tok leak2" style="animation-delay:-3.6s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$135</text></g>
+
+  <g class="tok leak3" style="animation-delay:-0.4s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$269</text></g>
+  <g class="tok leak3" style="animation-delay:-2.2s"><rect x="-27" y="-12" width="54" height="24" rx="12" fill="#FFFFFF" stroke="currentColor" stroke-width="1.5"/><text x="0" y="4" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">$158</text></g>
+</svg>

@@ -1,7 +1,23 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
+	"templateParts": [
+		{
+			"name": "dd-header",
+			"title": "Site Header (Daniel Deepak)",
+			"area": "header"
+		},
+		{
+			"name": "dd-footer",
+			"title": "Site Footer (Daniel Deepak)",
+			"area": "footer"
+		}
+	],
 	"settings": {
+		"layout": {
+			"contentSize": "1296px",
+			"wideSize": "1340px"
+		},
 		"typography": {
 			"fontFamilies": [
 				{

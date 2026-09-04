@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 460" role="img" aria-labelledby="ddTitle ddDesc" font-family="'Plus Jakarta Sans', ui-sans-serif, sans-serif">
+  <title id="ddTitle">The automated client journey loop</title>
+  <desc id="ddDesc">A continuous loop of eight steps — Enquiry, Auto-reply, Booking, Deposit, Reminder, Visit, Follow-up, Rebook — with a single client travelling the whole circuit and returning, so no client falls through the gaps.</desc>
+
+  <style>
+    @keyframes ddTravel { to { offset-distance: 100%; } }
+    @keyframes ddPulse {
+      0%   { opacity: 0;    r: 26; }
+      3%   { opacity: 0.45; r: 44; }
+      8%   { opacity: 0;    r: 26; }
+      100% { opacity: 0;    r: 26; }
+    }
+    @keyframes ddSpin { to { transform: rotate(360deg); } }
+
+    .ddMover { offset-path: path("M140,120 L700,120 A110,110 0 0 1 700,340 L140,340 A110,110 0 0 1 140,120 Z"); offset-rotate: 0deg; animation: ddTravel 12s linear infinite; }
+    .ddHalo  { fill: #C9A24B; opacity: 0; animation: ddPulse 12s linear infinite; }
+    .ddRing  { transform-origin: 420px 230px; animation: ddSpin 55s linear infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ddMover { animation: none; offset-distance: 31%; }
+      .ddHalo  { animation: none; opacity: 0; }
+      .ddRing  { animation: none; }
+    }
+  </style>
+
+  <defs>
+    <filter id="ddSoft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- Track: soft underlay + dotted sage path -->
+  <path d="M140,120 L700,120 A110,110 0 0 1 700,340 L140,340 A110,110 0 0 1 140,120 Z" fill="none" stroke="#EFEEE6" stroke-width="16"/>
+  <path d="M140,120 L700,120 A110,110 0 0 1 700,340 L140,340 A110,110 0 0 1 140,120 Z" fill="none" stroke="#A8BC9D" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 11" opacity="0.75"/>
+
+  <!-- Direction hints -->
+  <path d="M415,113 L426,120 L415,127" fill="none" stroke="#A8BC9D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M425,333 L414,340 L425,347" fill="none" stroke="#A8BC9D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Centre: rotating ring + caption -->
+  <circle class="ddRing" cx="420" cy="230" r="80" fill="none" stroke="#A8BC9D" stroke-width="2" stroke-dasharray="2 10" opacity="0.5"/>
+  <text x="420" y="224" text-anchor="middle" font-size="16" font-weight="700" letter-spacing="1.5" fill="#4B5A3F">ONE AUTOMATED</text>
+  <text x="420" y="247" text-anchor="middle" font-size="16" font-weight="700" letter-spacing="1.5" fill="#4B5A3F">CLIENT JOURNEY</text>
+  <text x="420" y="271" text-anchor="middle" font-size="10.5" font-weight="500" letter-spacing="0.4" fill="#7C9470">every client stays in the loop</text>
+
+  <!-- Nodes -->
+  <!-- 1 Enquiry (top) -->
+  <g>
+    <circle class="ddHalo" cx="140" cy="120" r="26" style="animation-delay:0.36s"/>
+    <circle cx="140" cy="120" r="26" fill="#ffffff" stroke="#7C9470" stroke-width="3"/>
+    <text x="140" y="126" text-anchor="middle" font-size="18" font-weight="700" fill="#4B5A3F">1</text>
+    <text x="140" y="84" text-anchor="middle" font-size="14" font-weight="600" fill="#2B2B26">Enquiry</text>
+  </g>
+  <!-- 2 Auto-reply (top) -->
+  <g>
+    <circle class="ddHalo" cx="327" cy="120" r="26" style="animation-delay:-0.88s"/>
+    <circle cx="327" cy="120" r="26" fill="#ffffff" stroke="#7C9470" stroke-width="3"/>
+    <text x="327" y="126" text-anchor="middle" font-size="18" font-weight="700" fill="#4B5A3F">2</text>
+    <text x="327" y="84" text-anchor="middle" font-size="14" font-weight="600" fill="#2B2B26">Auto-reply</text>
+  </g>
+  <!-- 3 Booking (top) -->
+  <g>
+    <circle class="ddHalo" cx="513" cy="120" r="26" style="animation-delay:-2.11s"/>
+    <circle cx="513" cy="120" r="26" fill="#ffffff" stroke="#7C9470" stroke-width="3"/>
+    <text x="513" y="126" text-anchor="middle" font-size="18" font-weight="700" fill="#4B5A3F">3</text>
+    <text x="513" y="84" text-anchor="middle" font-size="14" font-weight="600" fill="#2B2B26">Booking</text>
+  </g>
+  <!-- 4 Deposit (top) -->
+  <g>
+    <circle class="ddHalo" cx="700" cy="120" r="26" style="animation-delay:-3.35s"/>
+    <circle cx="700" cy="120" r="26" fill="#ffffff" stroke="#7C9470" stroke-width="3"/>
+    <text x="700" y="126" text-anchor="middle" font-size="18" font-weight="700" fill="#4B5A3F">4</text>
+    <text x="700" y="84" text-anchor="middle" font-size="14" font-weight="600" fill="#2B2B26">Deposit</text>
+  </g>
+  <!-- 5 Reminder (bottom) -->
+  <g>
+    <circle class="ddHalo" cx="700" cy="340" r="26" style="animation-delay:-5.64s"/>
+    <circle cx="700" cy="340" r="26" fill="#ffffff" stroke="#7C9470" stroke-width="3"/>
+    <text x="700" y="346" text-anchor="middle" font-size="18" font-weight="700" fill="#4B5A3F">5</text>
+    <text x="700" y="392" text-anchor="middle" font-size="14" font-weight="600" fill="#2B2B26">Reminder</text>
+  </g>
+  <!-- 6 Visit (bottom) -->
+  <g>
+    <circle class="ddHalo" cx="513" cy="340" r="26" style="animation-delay:-6.88s"/>
+    <circle cx="513" cy="340" r="26" fill="#ffffff" stroke="#7C9470" stroke-width="3"/>
+    <text x="513" y="346" text-anchor="middle" font-size="18" font-weight="700" fill="#4B5A3F">6</text>
+    <text x="513" y="392" text-anchor="middle" font-size="14" font-weight="600" fill="#2B2B26">Visit</text>
+  </g>
+  <!-- 7 Follow-up (bottom) -->
+  <g>
+    <circle class="ddHalo" cx="327" cy="340" r="26" style="animation-delay:-8.11s"/>
+    <circle cx="327" cy="340" r="26" fill="#ffffff" stroke="#7C9470" stroke-width="3"/>
+    <text x="327" y="346" text-anchor="middle" font-size="18" font-weight="700" fill="#4B5A3F">7</text>
+    <text x="327" y="392" text-anchor="middle" font-size="14" font-weight="600" fill="#2B2B26">Follow-up</text>
+  </g>
+  <!-- 8 Rebook (bottom) -->
+  <g>
+    <circle class="ddHalo" cx="140" cy="340" r="26" style="animation-delay:-9.35s"/>
+    <circle cx="140" cy="340" r="26" fill="#ffffff" stroke="#7C9470" stroke-width="3"/>
+    <text x="140" y="346" text-anchor="middle" font-size="18" font-weight="700" fill="#4B5A3F">8</text>
+    <text x="140" y="392" text-anchor="middle" font-size="14" font-weight="600" fill="#2B2B26">Rebook</text>
+  </g>
+
+  <!-- Travelling client -->
+  <g class="ddMover">
+    <circle cx="0" cy="0" r="22" fill="#C9A24B" opacity="0.30" filter="url(#ddSoft)"/>
+    <circle cx="0" cy="0" r="9" fill="#C9A24B"/>
+    <circle cx="0" cy="0" r="3.5" fill="#FAF9F5"/>
+  </g>
+</svg>

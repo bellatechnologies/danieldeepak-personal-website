@@ -1,0 +1,84 @@
+<!-- wp:template-part {"slug":"dd-header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"dd-blog","backgroundColor":"base","align":"full","layout":{"type":"default"}} -->
+<main class="wp-block-group alignfull dd-blog has-base-background-color has-background">
+
+	<!-- wp:group {"className":"dd-wrap","layout":{"type":"default"}} -->
+	<div class="wp-block-group dd-wrap">
+
+		<!-- wp:group {"className":"dd-blog-head","layout":{"type":"default"}} -->
+		<div class="wp-block-group dd-blog-head">
+			<!-- wp:heading {"level":1} -->
+			<h1 class="wp-block-heading">Blog</h1>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"className":"dd-section-lede"} -->
+			<p class="dd-section-lede">Notes on enquiries, bookings, and keeping spa &amp; wellness clients coming back.</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:html -->
+		<div class="dd-tags">
+			<span class="dd-tag active">All</span>
+			<span class="dd-tag">Case Study</span>
+			<span class="dd-tag">Enquiries</span>
+			<span class="dd-tag">CRM</span>
+			<span class="dd-tag">Retention</span>
+			<span class="dd-tag">Automation</span>
+		</div>
+		<!-- /wp:html -->
+
+		<!-- wp:query {"queryId":0,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false},"className":"dd-featured-query"} -->
+		<div class="wp-block-query dd-featured-query">
+			<!-- wp:post-template -->
+				<!-- wp:group {"className":"dd-featured","layout":{"type":"default"}} -->
+				<div class="wp-block-group dd-featured">
+					<!-- wp:group {"className":"dd-featured-media","layout":{"type":"default"}} -->
+					<div class="wp-block-group dd-featured-media">
+						<!-- wp:post-terms {"term":"category","className":"dd-cat-pill"} /-->
+					</div>
+					<!-- /wp:group -->
+
+					<!-- wp:group {"className":"dd-featured-body","layout":{"type":"default"}} -->
+					<div class="wp-block-group dd-featured-body">
+						<!-- wp:post-title {"level":2,"isLink":true} /-->
+						<!-- wp:post-excerpt {"excerptLength":30} /-->
+						<!-- wp:post-date {"className":"dd-meta"} /-->
+					</div>
+					<!-- /wp:group -->
+				</div>
+				<!-- /wp:group -->
+			<!-- /wp:post-template -->
+		</div>
+		<!-- /wp:query -->
+
+		<!-- wp:query {"queryId":1,"query":{"perPage":6,"pages":0,"offset":1,"postType":"post","order":"desc","orderBy":"date","inherit":false},"className":"dd-grid-query"} -->
+		<div class="wp-block-query dd-grid-query">
+			<!-- wp:post-template {"className":"dd-grid"} -->
+				<!-- wp:group {"className":"dd-card","layout":{"type":"default"}} -->
+				<div class="wp-block-group dd-card">
+					<!-- wp:group {"className":"dd-card-media","layout":{"type":"default"}} -->
+					<div class="wp-block-group dd-card-media"></div>
+					<!-- /wp:group -->
+
+					<!-- wp:group {"className":"dd-card-body","layout":{"type":"default"}} -->
+					<div class="wp-block-group dd-card-body">
+						<!-- wp:post-terms {"term":"category","className":"dd-cat"} /-->
+						<!-- wp:post-title {"level":3,"isLink":true} /-->
+						<!-- wp:post-date {"className":"dd-meta"} /-->
+					</div>
+					<!-- /wp:group -->
+				</div>
+				<!-- /wp:group -->
+			<!-- /wp:post-template -->
+		</div>
+		<!-- /wp:query -->
+
+	</div>
+	<!-- /wp:group -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"dd-footer","tagName":"footer"} /-->

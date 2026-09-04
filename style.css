@@ -64,10 +64,112 @@ Text Domain: twentytwentyfive-child
 	.dd-profile-card { width: 50%; }
 }
 
-/* Circular photo with a sage ring (accent-1). */
+/* -------------------------------------------------------------------------
+   Top banner — solid sage strip (~top 20%) with overlapping left avatar.
+   Only this region changes; the rest of the card is untouched.
+   ------------------------------------------------------------------------- */
+
+/* Solid green strip that breaks out of the card's padding to sit flush with
+   the top + side edges (negative margins == the card's 48/44 padding). */
+.dd-profile-card .dd-banner {
+	margin: -48px -44px 0 !important;
+	width: auto !important;
+	max-width: none !important;
+	height: 125px;
+	padding: 26px 28px 30px 44px; /* left padding == card padding, so banner text lines up with avatar + name */
+	border-radius: 28px 28px 0 0;
+	background: var(--wp--preset--color--accent-1, #7C9470);
+	text-align: right;
+}
+
+/* Eyebrow — savings lead-in. */
+.dd-banner .dd-banner-eyebrow {
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+/* Amount — the headline savings figure. */
+.dd-banner .dd-banner-amount {
+	margin: 0.1rem 0;
+	font-size: 2.4rem;
+	font-weight: 800;
+	line-height: 1;
+	color: #ffffff;
+}
+
+/* Sub — cadence beneath the amount. */
+.dd-banner .dd-banner-sub {
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+/* Name line — same visual as the former H1, now a <p> for semantic correctness. */
+.dd-profile-card .dd-name {
+	display: flex;
+	align-items: center;
+	gap: 0.25em;
+	margin-top: var(--wp--preset--spacing--30);
+	margin-bottom: 0.35rem;
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 1.75rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	color: var(--wp--preset--color--contrast, #2B2B26);
+}
+
+/* ICP H1 — semantic page headline, visually indistinguishable from body copy. */
+.dd-profile-card h1.wp-block-heading.dd-icp-heading {
+	font-family: Inter, ui-sans-serif, sans-serif;
+	font-size: inherit;
+	font-weight: inherit;
+	letter-spacing: -0.1px;
+	text-transform: none;
+	line-height: inherit;
+	margin-top: calc(2 * var(--wp--preset--spacing--20, 0.5rem));
+	margin-bottom: 0;
+	color: inherit;
+}
+
+/* X "verified" badge sitting next to the name. */
+.dd-verified-icon {
+	flex: 0 0 auto;
+	width: 0.85em;
+	height: 0.85em;
+	color: #1d9bf0; /* X verified blue */
+}
+
+/* Circular photo — left-aligned, pulled up to overlap the banner, white ring. */
+.dd-profile-card .dd-photo {
+	margin-top: -68px !important; /* overlaps the banner so the 125px avatar reads centered on the seam */
+	margin-left: 0 !important;
+	margin-right: auto !important;
+}
+
 .dd-profile-card .dd-photo img {
 	border-radius: 50%;
-	box-shadow: 0 0 0 3px var(--wp--preset--color--accent-1, #7C9470);
+	box-shadow: 0 0 0 4px #ffffff, 0 6px 16px rgba(43, 43, 38, 0.18);
+}
+
+/* Double the top spacing on the card's flowing paragraphs (default gap is
+   blockGap spacing|20). The flush .dd-handle and the banner keep their own
+   margins via higher specificity. */
+.dd-profile-card > p {
+	margin-top: calc(2 * var(--wp--preset--spacing--20, 0.5rem));
+}
+
+/* Role / handle line directly under the name. */
+.dd-profile-card .dd-handle {
+	margin-top: 0;
+	margin-bottom: 1rem;
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: rgba(43, 43, 38, 0.55);
 }
 
 /* Inline links inside the card use the gold accent (accent-4). */
@@ -116,6 +218,14 @@ Text Domain: twentytwentyfive-child
 
 .dd-cta .dd-cta-icon {
 	flex: 0 0 auto;
+}
+
+/* Emphasised phrase — thick accent underline instead of a filled highlight. */
+.dd-profile-card .dd-highlight {
+	text-decoration: underline dashed;
+	text-decoration-color: var(--wp--preset--color--accent-1, #7C9470);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 5px;
 }
 
 /* -------------------------------------------------------------------------

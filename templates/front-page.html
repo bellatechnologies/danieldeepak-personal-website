@@ -1,38 +1,63 @@
 <!-- wp:group {"tagName":"main","className":"dd-profile-screen","backgroundColor":"base","layout":{"type":"default"}} -->
 <main class="wp-block-group dd-profile-screen has-base-background-color has-background">
 
-	<!-- wp:group {"className":"dd-profile-card","style":{"color":{"background":"#ffffff"},"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"360px"}} -->
+	<!-- wp:group {"className":"dd-profile-card","style":{"color":{"background":"#ffffff"},"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group dd-profile-card has-background" style="background-color:#ffffff">
 
-		<!-- wp:image {"id":9,"width":"150px","height":"150px","scale":"cover","sizeSlug":"thumbnail","align":"center","className":"is-style-rounded dd-photo"} -->
-		<figure class="wp-block-image aligncenter size-thumbnail is-resized is-style-rounded dd-photo"><img src="/wp-content/uploads/2026/06/stakeholder-photo-300x300.jpg" alt="Maria Daniel Deepak" class="wp-image-9" style="object-fit:cover;width:150px;height:150px"/></figure>
+		<!-- wp:group {"className":"dd-banner","layout":{"type":"default"}} -->
+		<div class="wp-block-group dd-banner">
+			<!-- wp:paragraph {"className":"dd-banner-eyebrow"} -->
+			<p class="dd-banner-eyebrow">each enquiry you miss costs you</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:paragraph {"className":"dd-banner-amount"} -->
+			<p class="dd-banner-amount">$1,000+</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:paragraph {"className":"dd-banner-sub"} -->
+			<p class="dd-banner-sub">over 6 months</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:image {"id":9,"width":"125px","height":"125px","scale":"cover","sizeSlug":"thumbnail","align":"center","className":"is-style-rounded dd-photo"} -->
+		<figure class="wp-block-image aligncenter size-thumbnail is-resized is-style-rounded dd-photo"><img src="/wp-content/uploads/2026/06/stakeholder-photo-300x300.jpg" alt="Maria Daniel Deepak" class="wp-image-9" style="object-fit:cover;width:125px;height:125px"/></figure>
 		<!-- /wp:image -->
 
-		<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"textTransform":"uppercase","letterSpacing":"2px","fontSize":"2rem"},"spacing":{"margin":{"top":"calc(2 * var(--wp--preset--spacing--30))","bottom":"calc(2 * var(--wp--preset--spacing--30))"}}}} -->
-		<h1 class="wp-block-heading has-text-align-center" style="margin-top:calc(2 * var(--wp--preset--spacing--30));margin-bottom:calc(2 * var(--wp--preset--spacing--30));font-size:1.75rem;letter-spacing:1px;text-transform:uppercase">Maria Daniel Deepak</h1>
+		<!-- wp:paragraph {"align":"left","className":"dd-name"} -->
+		<p class="has-text-align-left dd-name">Maria Daniel Deepak <svg class="dd-verified-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="22" height="22" role="img" aria-label="Verified account" focusable="false"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:paragraph {"className":"dd-handle"} -->
+		<p class="dd-handle">Enquiry to repeat customer. One connected CRM.</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:heading {"textAlign":"left","level":1,"className":"dd-icp-heading"} -->
+		<h1 class="wp-block-heading has-text-align-left dd-icp-heading">I help <strong>spa and wellness owners</strong> <span class="dd-highlight">turn more enquiries into bookings and keep those clients coming back</span> more often.</h1>
 		<!-- /wp:heading -->
 
-		<!-- wp:paragraph {"align":"center"} -->
-		<p class="has-text-align-center">I help <strong>spa and wellness business owners</strong> stop losing bookings to no-shows and missed calls with automated WhatsApp reminders, deposits and instant call-backs.</p>
+		<!-- wp:paragraph {"align":"left"} -->
+		<p class="has-text-align-left">Most spas lose 30–40% of enquiries before anyone replies.</p>
 		<!-- /wp:paragraph -->
 
-		<!-- wp:paragraph {"align":"center"} -->
-		<p class="has-text-align-center">If it doesn't pay for itself in 30 days, you don't pay.</p>
-		<!-- /wp:paragraph -->
-
-		<!-- wp:buttons {"className":"dd-cta","layout":{"type":"flex","justifyContent":"center"}} -->
+		<!-- wp:buttons {"className":"dd-cta","layout":{"type":"flex","justifyContent":"left"}} -->
 		<div class="wp-block-buttons dd-cta">
 			<!-- wp:button {"backgroundColor":"accent-2","textColor":"base","linkTarget":"_blank","rel":"noopener","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}}} -->
-			<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-accent-2-background-color has-text-color has-background wp-element-button" href="https://wa.me/916385738399?text=Hi%20Daniel%2C%20I%27d%20like%20to%20see%20the%20demo." target="_blank" rel="noopener"><svg class="dd-cta-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>WhatsApp</a></div>
+			<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-accent-2-background-color has-text-color has-background wp-element-button" href="https://bellatechnologies.in/?utm_source=personal-blog&utm_medium=wellness-case-study" target="_blank" rel="noopener">Explore Case Study<svg class="dd-cta-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->
 
+		<!-- wp:paragraph {"align":"left","className":"dd-cta-links","style":{"typography":{"fontSize":"0.9rem"}}} -->
+		<p class="has-text-align-left dd-cta-links" style="font-size:0.9rem">Or read <a href="/blog/">my blog</a> · see what I'm doing <a href="/now/">now</a>.</p>
+		<!-- /wp:paragraph -->
+
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:social-links {"iconColor":"accent-2","iconColorValue":"#4B5A3F","className":"dd-socials is-style-default","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+	<!-- wp:social-links {"iconColor":"accent-2","iconColorValue":"#4B5A3F","className":"dd-socials is-style-default","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"left"}} -->
 	<ul class="wp-block-social-links has-icon-color dd-socials is-style-default" style="margin-top:var(--wp--preset--spacing--40)">
+		<!-- wp:social-link {"url":"https://wa.me/916385738399","service":"whatsapp","label":"WhatsApp"} /-->
 		<!-- wp:social-link {"url":"https://www.linkedin.com/in/mariadanieldeepak/","service":"linkedin","label":"LinkedIn"} /-->
 		<!-- wp:social-link {"url":"https://github.com/mariadanieldeepak","service":"github","label":"GitHub"} /-->
 		<!-- wp:social-link {"url":"https://x.com/mariaddeepak","service":"x","label":"X"} /-->

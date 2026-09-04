@@ -229,175 +229,405 @@ Text Domain: twentytwentyfive-child
 }
 
 /* -------------------------------------------------------------------------
-   About page — two-column portrait layout ("templates/page-about.html")
+   About page — mobile-first stacked sections ("templates/page-about.html")
+   Sections: sticky header · full-bleed hero · funnel · about-me ·
+   solution loop · full-bleed footer. Reusable header/footer live in
+   parts/dd-header.html and parts/dd-footer.html.
    ------------------------------------------------------------------------- */
 
-.dd-about-page {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-	padding: 48px 24px;
+.dd-about {
+	margin-block-start: 0;
+	padding: 0;
 }
 
-.dd-about-columns.wp-block-columns {
-	gap: 0 !important;
-	margin-bottom: 0;
+/* Inner wrapper — constrains content inside the full-bleed sections.
+   Matches the site-wide content width (theme.json contentSize: 1296px). */
+.dd-wrap {
+	box-sizing: border-box;
 	width: 100%;
-	max-width: 1200px;
-	border-radius: 24px;
-	overflow: hidden;
-	box-shadow: 0 24px 60px rgba(43, 43, 38, 0.10);
-	/* Paint the sidebar colour as a column-stop gradient so it always
-	   fills the full height regardless of which column is taller. */
-	background: linear-gradient(
-		to right,
-		var(--wp--preset--color--accent-1) 30%,
-		var(--wp--preset--color--base)      30%
-	);
+	max-width: 1296px;
+	margin-inline: auto;
+	padding-inline: 22px;
 }
 
-/* ── Sidebar (accent-1) ── */
-.dd-about-sidebar.wp-block-column {
-	background: transparent;
-	padding: 52px 28px 48px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+/* ── Sticky menu bar (parts/dd-header.html) ── */
+/* The bar background spans full width; .dd-header-inner caps the logo +
+   menu to the site content width (1296px), aligning them with .dd-wrap. */
+.dd-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-sizing: border-box;
+	padding: 22px 0;
+	background: rgba(250, 249, 245, 0.92);
+	-webkit-backdrop-filter: saturate(180%) blur(8px);
+	backdrop-filter: saturate(180%) blur(8px);
+	border-bottom: 1px solid rgba(43, 43, 38, 0.08);
 }
 
-.dd-about-photo {
-	margin-bottom: 0 !important;
-}
-
-.dd-about-photo img {
-	border-radius: 50%;
-	box-shadow: 0 0 0 3px #fff, 0 4px 16px rgba(43, 43, 38, 0.2);
-}
-
-.dd-about-name {
-	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
-	font-size: 1rem;
-	font-weight: 700;
-	color: #fff !important;
-	text-align: center;
-	line-height: 1.25;
-	margin-top: 1rem;
-	margin-bottom: 0.2rem;
-}
-
-.dd-about-role {
-	font-size: 0.7rem;
-	font-weight: 500;
-	letter-spacing: 0.06em;
-	text-transform: uppercase;
-	color: rgba(255, 255, 255, 0.7) !important;
-	text-align: center;
-	margin-top: 0;
-	margin-bottom: 1.5rem;
-}
-
-.dd-about-stats.wp-block-group {
+.dd-header-inner {
+	box-sizing: border-box;
 	width: 100%;
+	max-width: 1296px;
+	margin-inline: auto;
+	padding-inline: 22px;
 }
 
-.dd-about-stat.wp-block-group {
-	padding: 10px 0;
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dd-about-stat.wp-block-group:last-child {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dd-about-stat-num {
-	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
-	font-size: 1.4rem;
-	font-weight: 800;
-	color: #fff !important;
-	line-height: 1;
+.dd-logo {
 	margin: 0;
 }
 
-.dd-about-stat-label {
-	font-size: 0.65rem;
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
-	color: rgba(255, 255, 255, 0.6) !important;
-	margin-top: 0.15rem;
-	margin-bottom: 0;
+.dd-logo a {
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 1.375rem; /* 22px — matches the site title on /now/ */
+	font-weight: 700;
+	letter-spacing: -0.5px;
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
 }
 
-.dd-about-tags {
-	margin-top: 1.25rem;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 4px;
-	justify-content: center;
+/* Match the /now/ menu typography (Inter 18px / 400 / -0.1px / #6a7282).
+   Nav items use color:inherit, so these cascade to the links. */
+.dd-nav {
+	font-size: 1.125rem; /* 18px */
+	font-weight: 400;
+	letter-spacing: -0.1px;
+	color: #6a7282;
 }
 
-.dd-about-tag {
-	display: inline-block;
-	font-size: 0.7rem;
-	font-weight: 500;
-	padding: 3px 10px;
-	border-radius: 99px;
-	background: rgba(255, 255, 255, 0.2);
+.dd-nav a {
+	text-decoration: none;
+}
+
+/* WP's navigation block forces color:inherit at high specificity
+   (.wp-block-navigation-item__content doubled), so these match that class
+   to win the cascade. */
+.dd-nav a.wp-block-navigation-item__content:hover {
+	color: var(--wp--preset--color--accent-2);
+}
+
+/* Current page — dark green (accent-2) so the active item stands out. */
+.dd-nav a.wp-block-navigation-item__content[aria-current="page"] {
+	color: var(--wp--preset--color--accent-2);
+}
+
+/* ── Hero (full bleed, olive) ── */
+.dd-hero {
+	box-sizing: border-box;
+	padding: 56px 0 64px;
 	color: #fff;
 }
 
-/* ── Content area (base) ── */
-.dd-about-content.wp-block-column {
-	background-color: var(--wp--preset--color--base);
-	padding: 52px 52px 48px;
-}
-
-.dd-about-heading.wp-block-heading {
-	font-size: 1.6rem;
-	font-weight: 800;
-	line-height: 1.2;
-	color: var(--wp--preset--color--contrast);
-	margin-bottom: 0.5rem;
-}
-
-.dd-about-lede {
-	font-size: 1rem;
-	font-weight: 500;
-	color: var(--wp--preset--color--contrast);
-	line-height: 1.55;
-	margin-bottom: 1rem;
-}
-
-.dd-about-pull {
-	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
-	font-size: 1rem;
+.dd-hero-eyebrow {
+	margin: 0 0 1rem;
+	font-size: 0.875rem; /* 14px */
 	font-weight: 700;
-	color: var(--wp--preset--color--accent-2) !important;
-	line-height: 1.45;
-	margin: 1.25rem 0;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--accent-4);
+}
+
+.dd-hero-title.wp-block-heading {
+	margin: 0 0 1rem;
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1.18;
+	color: #fff;
+}
+
+.dd-hero-title strong {
+	color: var(--wp--preset--color--accent-5);
+	font-weight: 800;
+}
+
+.dd-hero-sub {
+	margin: 0 0 1.75rem;
+	font-size: 1.05rem;
+	line-height: 1.55;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+/* CTA buttons — shared by hero + solution sections. */
+.dd-hero-cta .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.85rem 1.5rem;
+	border-radius: 999px;
+	font-weight: 600;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dd-hero-cta .wp-block-button__link:hover,
+.dd-hero-cta .wp-block-button__link:focus {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+/* Arrow sits inside a white circle (à la a "Start free trial" chip).
+   box-sizing + padding shrink the arrow within the disc. */
+.dd-cta-icon {
+	box-sizing: border-box;
+	flex: 0 0 auto;
+	width: 38px;
+	height: 38px;
+	padding: 11px;
+	border-radius: 50%;
+	background: #fff;
+	color: var(--wp--preset--color--accent-2);
+	transition: transform 0.15s ease;
+}
+
+/* Nudge the arrow on hover. */
+.dd-hero-cta .wp-block-button__link:hover .dd-cta-icon,
+.dd-hero-cta .wp-block-button__link:focus .dd-cta-icon {
+	transform: translate(1px, -1px);
+}
+
+/* ── Generic content section ── */
+.dd-section {
+	box-sizing: border-box;
+	padding: 56px 0;
+}
+
+.dd-eyebrow {
+	margin: 0 0 0.5rem;
+	font-size: 0.875rem; /* 14px */
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--accent-1);
+}
+
+/* Inherit the theme's default h2 sizing (matches the /now/ headings —
+   32px / 700 / Plus Jakarta Sans, including its responsive scaling). */
+.dd-section-title.wp-block-heading {
+	margin: 0 0 0.75rem;
+}
+
+.dd-section-lede {
+	margin: 0 0 1.5rem;
+	font-size: 1.02rem;
+	font-weight: 500;
+	line-height: 1.55;
+	color: var(--wp--preset--color--contrast);
+}
+
+/* ── SVG diagrams (funnel + loop) ── */
+.dd-figure {
+	margin: 1.5rem 0;
+	text-align: center;
+}
+
+.dd-svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	max-width: 460px;
+}
+
+.dd-funnel .dd-svg {
+	max-width: 660px;
+}
+
+.dd-solution .dd-svg {
+	max-width: 560px;
+}
+
+.dd-figcaption {
+	margin: 1rem auto 0;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	color: rgba(43, 43, 38, 0.7);
+	text-align: center;
+}
+
+.dd-figcaption strong {
+	color: var(--wp--preset--color--accent-2);
+}
+
+/* ── About me ── */
+.dd-aboutme-photo {
+	margin: 0 auto 1rem !important;
+}
+
+.dd-aboutme-photo img {
+	border-radius: 50%;
+	box-shadow: 0 0 0 3px #fff, 0 4px 16px rgba(43, 43, 38, 0.18);
+}
+
+.dd-aboutme-name {
+	margin: 0 0 0.1rem;
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: var(--wp--preset--color--contrast);
+}
+
+.dd-aboutme-role {
+	margin: 0 0 1.5rem;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--accent-1);
+}
+
+.dd-aboutme-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+.dd-stat {
+	flex: 1 1 90px;
+	min-width: 90px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 14px 8px;
+	border-radius: 14px;
+	background: #fff;
+	box-shadow: 0 4px 14px rgba(43, 43, 38, 0.06);
+}
+
+.dd-stat-num {
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 1.3rem;
+	font-weight: 800;
+	line-height: 1;
+	color: var(--wp--preset--color--accent-2);
+}
+
+.dd-stat-label {
+	margin-top: 0.35rem;
+	font-size: 0.62rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: rgba(43, 43, 38, 0.55);
+	text-align: center;
+}
+
+.dd-aboutme .dd-section-title.wp-block-heading,
+.dd-aboutme .dd-section-lede {
+	text-align: left;
+}
+
+.dd-pull {
+	margin: 1.5rem 0;
 	padding: 14px 20px;
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	line-height: 1.45;
+	color: var(--wp--preset--color--accent-2);
 	border-left: 3px solid var(--wp--preset--color--accent-1);
-	background-color: #F0F5EE;
+	background: #F0F5EE;
 	border-radius: 0 8px 8px 0;
 }
 
-.dd-about-focus-label {
+.dd-focus-label {
+	margin: 1.75rem 0 0.3rem;
 	font-size: 0.65rem;
-	font-weight: 600;
+	font-weight: 700;
 	letter-spacing: 0.09em;
 	text-transform: uppercase;
-	color: var(--wp--preset--color--accent-1) !important;
-	margin-top: 1.5rem;
-	margin-bottom: 0.3rem;
+	color: var(--wp--preset--color--accent-1);
 }
 
-/* ── Mobile: stack columns ── */
-@media (max-width: 781px) {
-	.dd-about-sidebar.wp-block-column {
-		padding: 40px 24px;
+.dd-aboutme-tags {
+	margin-top: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.dd-tag {
+	padding: 4px 12px;
+	font-size: 0.72rem;
+	font-weight: 600;
+	border-radius: 999px;
+	background: var(--wp--preset--color--accent-6);
+	color: var(--wp--preset--color--accent-2);
+}
+
+/* ── Footer (full bleed, olive) — parts/dd-footer.html ── */
+.dd-footer {
+	box-sizing: border-box;
+	padding: 48px 0 40px;
+	color: #fff;
+}
+
+.dd-footer-inner {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 1296px;
+	margin-inline: auto;
+	padding-inline: 22px;
+}
+
+.dd-footer-brand {
+	margin: 0 0 0.4rem;
+	font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+	font-size: 1.25rem;
+	font-weight: 800;
+	color: #fff;
+}
+
+.dd-footer-tagline {
+	margin: 0 0 1.5rem;
+	max-width: 30rem;
+	font-size: 0.95rem;
+	line-height: 1.55;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.dd-footer-nav {
+	gap: 1.25rem !important;
+	margin-bottom: 1.25rem;
+}
+
+.dd-footer-nav p {
+	margin: 0;
+}
+
+.dd-footer-nav a {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.85);
+	text-decoration: none;
+}
+
+.dd-footer-nav a:hover {
+	color: var(--wp--preset--color--accent-5);
+}
+
+.dd-footer-socials {
+	margin-bottom: 1.5rem;
+}
+
+.dd-footer-copy {
+	margin: 0;
+	font-size: 0.8rem;
+	color: rgba(255, 255, 255, 0.55);
+}
+
+/* ── Larger screens ── */
+@media (min-width: 600px) {
+	.dd-hero {
+		padding: 80px 0 88px;
 	}
 
-	.dd-about-content.wp-block-column {
-		padding: 40px 24px;
+	.dd-hero-title.wp-block-heading {
+		font-size: 2.6rem;
+	}
+
+	.dd-section {
+		padding: 72px 0;
 	}
 }
